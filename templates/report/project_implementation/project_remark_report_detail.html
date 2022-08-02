@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card user-card-full">
+                                <div class="row m-l-0 m-r-0">
+                                   
+                                    <div class="col-sm-6">
+                                        <div class="card-block">{{project_remark_report_detail}}
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Project Name</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_remark_report_detail.project}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Remark</h6>
+                                            <div class="row">
+                                                {%for remark in project_remark_report_detail.project_remark.all %}
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">Budget Year Obstacle</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{remark.budget_year_obstacle}}</h6>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">Project Total Limitations </p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{remark.project_total_limitation}}</h6>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">Project Comments</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{remark.project_comment}}</h6>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">Project Photo or Video</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{remark.project_file}}</h6>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600"></h6>
+
+                                                 
+                                                </div>
+                                                <hr>
+
+                                           
+                                                {%endfor%}
+                                               
+                                            </div>
+                                           
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <hr>
+                        
+                      
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="page-body">
+                            <div class="col-xl-12 col-md-12">
+                                <div class="card user-card-full">
+                                    <div class="row m-l-0 m-r-0">
+                                       
+                                        <div class="col-sm-6">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Project Name</p>
+                                                     
+                                                        <h6 class="text-muted f-w-400">{{Project_appraisal_evaluation.project_appraisal.project_name}}</h6>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">project project Apperisal Evaluation</h6>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Appraisal Result</p>
+                                                     
+                                                        <h6 class="text-muted f-w-400">{{Project_appraisal_evaluation.appraisal_result}}</h6>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Date of Appraisal Result Sent</p>
+                                                     
+                                                        <h6 class="text-muted f-w-400">{{Project_appraisal_evaluation.arrival_date_of_project_appraisal_to_pds}}</h6>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Reason</p>
+                                                     
+                                                        <h6 class="text-muted f-w-400">{{Project_appraisal_evaluation.reason}}</h6>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Implimentaion & Monitoring plan</h6>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Arrival Date of THe paln For evaluation to PDS</p>
+                                                        <h6 class="text-muted f-w-400">{{project_implementation_and_plan.arrival_date_of_plane_for_evaluation_pdm}}</h6>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">Evaluation Result</p>
+                                                        <h6 class="text-muted f-w-400">{{project_implementation_and_plan.evaluation_result}}</h6>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p class="m-b-10 f-w-600">  Reason</p>
+                                                        <h6 class="text-muted f-w-400">{{project_implementation_and_plan.reason.}}</h6>
+                                                    </div>
+                                                   
+                                                </div>
+                                               
+                                               
+                                              
+                                               
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                         
+        
+                     
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}

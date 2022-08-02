@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>      
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/themes/fusioncharts.theme.fusion.js' %}"></script>
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+          <div class="row">  
+              <!-- task, page, download counter  start -->
+              <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-yellow update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-8">
+                                <h4 class="text-white">{{project_count_data.all_project}}</h4>
+                                <h6 class="text-white m-b-0">Projects</h6>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">All projects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-green update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-8">
+                                <h4 class="text-white">{{project_count_data.Accepted_project}}</h4>
+                                <h6 class="text-white m-b-0">Appraisal Accepted</h6>
+                              
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">Accepted Project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-lite-green update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <h4 class="text-white">{{project_count_data.unaccepted_project}}</h4>
+                                <h6 class="text-white m-b-0">Appraisal unaccepted</h6>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">Rejected Project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-pink update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-8">
+                                <h4 class="text-white">{{project_count_data.project_on_implementation}}</h4>
+                                <h6 class="text-white m-b-0">Implementation</h6>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">Project on Implemetation</p>
+                    </div>
+                </div>
+            </div>
+        
+          
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-lite-green update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-8">
+                                <h4 class="text-white">{{project_count_data.not_evaluated_project}}</h4>
+                                <h6 class="text-white m-b-0">Not Evaluated</h6>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">Project Not Evaluated</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-c-blue update-card">
+                    <div class="card-block">
+                        <div class="row align-items-end">
+                            <div class="col-8">
+                                <h4 class="text-white">000</h4>
+                                <h6 class="text-white m-b-0">Completed</h6>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-white m-b-0">Completed Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>   
+            <!-- task, page, download counter  end -->
+        <div class="col-12" style="color:red;"> 
+            <div class="row">
+                <div class="col-sm-4 ">
+                    <div class="col-sm-3">
+                        {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                     
+                        <div id="chart-1">{{ output|safe }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-3">
+                        {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                          <div id="chart-2">{{ output2|safe }}</div>
+            
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-3">
+                        {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                          <div id="chart-3">{{ output3|safe }}</div>
+            
+                 </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

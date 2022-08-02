@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="card" style="padding:10px">
+                            <div class="card-header">
+                                <h5>Search</h5>
+                                </div>
+                                <form method="get">
+                                    <div class="row filter-row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">Project Name</label>
+                                                        {% render_field filter.form.project class="form-control floating"  %}
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">pre budge year financial performancebirr</label>
+                                                        {% render_field filter.form.project_financial_status__pre_b_year_financial_performance_birr  class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">budget financial plan</label>
+                                                        {% render_field filter.form.project_financial_status__budget_financial_plan  class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                              
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">quarter plan</label>
+                                                        {% render_field filter.form.project_financial_status__quarter_plan   class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">quarter financial plan</label>
+                                                        {% render_field filter.form.project_financial_status__quarter_financial_plan class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">quarter financial performance</label>
+                                                        {% render_field filter.form.project_financial_status__quarter_financial_performance   class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label"> quarter financial ratio</label>
+                                                        {% render_field filter.form.project_financial_status__quarter_financial_ratio class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label"> YTD financial work plan</label>
+                                                        {% render_field filter.form.project_financial_status__YTD_financial_work_plan class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label"> YTD financial work performance</label>
+                                                        {% render_field filter.form.project_financial_status__YTD_financial_work_performance class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label"> YTD financial work performance</label>
+                                                        {% render_field filter.form.project_financial_status__YTD_financial_performance_to_plan_ratio class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                               
+                                             
+                                              
+                                                <div class="col-sm-6 col-md-2 offset-10"> 
+                                                  
+                                                    <input type="submit" class="btn btn-success btn-block " style="float:right;"  value="Search"/>
+                                                    {% comment %} <a href="#" class="btn btn-success btn-block">Search</a>   {% endcomment %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Table(1/2) Financial Status</h5>
+                                </div>
+                            <div class="card-block">
+                                <div class="table-responsive dt-responsive">
+                                    <table id="complex-header" class="table table-striped table-bordered nowrap" style="text-align: center;">
+                                        <thead>
+                                            <tr>
+                                                <th  rowspan="0">Id</th>
+                                                <th  rowspan="0">Project Name</th>
+                                                <th colspan="16">project<br> Financial Status</th>
+                                                
+                                            </tr>
+                                            <tr style="text-align: center;">
+                                                <th rowspan="0">pre b.yr's pysical<br> work performance in %</th>
+                                                
+                                                <th rowspan="0">Pysical work <br> plan</th>
+                                                <th colspan="4">Qurater pysical<br> Financial plan</th>
+                                                <th colspan="4">Qurater pysical Financial <br>performance</th>
+                                                
+                                                <th rowspan="0">Performance to <br>plane Ratio</th>
+                                                <th rowspan="0">YTD pysical<br> work Plan</th>
+                                                <th rowspan="0">YTD pysical work<br> performance</th>
+                                                <th rowspan="0">YTD performance to<br> plan Ratio</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th>first Name</th>
+                                                <th>Second choice</th>
+                                                <th>Thired</th>
+                                                <th>Fourth</th>
+                                                <th>first Name</th>
+                                                <th>Second choice</th>
+                                                <th>Thired</th>
+                                                <th>Fourth</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for rs in data %}
+                                            <tr>
+                                                <td>{{rs.id}}</td>
+                                                <td><a href="{% url 'report:project_financial_status_report_detail' rs.id %}" >{{rs.project}}</a></td>
+                                                <td>{{rs.project_financial_status.pre_b_year_financial_performance_birr}}</td>
+                                                <td>{{rs.project_financial_status.budget_financial_plan}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_plan.first_quarter }}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_plan.second_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_plan.third_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_plan.fourth_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_performance.first_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_performance.second_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_performance.third_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_performance.fourth_quarter}}</td>
+                                                <td>{{rs.project_financial_status.quarter_financial_ratio.fourth_quarter}}</td>
+                                                <td>{{rs.project_financial_status.YTD_financial_work_plan}}</td>
+                                                <td>{{rs.project_financial_status.YTD_financial_work_performance}}</td>
+                                                <td>{{rs.project_financial_status.YTD_financial_performance_to_plan_ratio}}</td>
+
+                                                
+                                            </tr>
+                                            {%endfor%}
+                                    
+                                 
+                                      
+                                        
+                                         
+                                        </tbody>
+                                      
+                                    </table>
+                                </div>
+                                <div>
+                                    {% include "report/pagination.html" %}
+                                     </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        
+                      
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}

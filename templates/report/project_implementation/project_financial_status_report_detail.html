@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+         
+ <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+ <script type="text/javascript" src="{% static 'fusioncharts/themes/fusioncharts.theme.fusion.js' %}"></script>
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card user-card-full">
+                                <div class="row m-l-0 m-r-0">
+                                   
+                                    <div class="col-sm-6">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Project Name</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Financial Status</h6>
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">Previous b.Year financial work performance in %</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.pre_b_year_financial_performance_birr}}</h6>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p class="m-b-10 f-w-600">pysical Work Plan</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.budget_financial_plan}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">qurater pysical Financial plan</h6>
+                                                <div class="card-block">
+                                
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">First</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.first_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">Second</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.second_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Thired</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.third_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Fourth</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.fourth_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                    </div>
+            
+                                                </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">qurater pysical Financial performance</h6>
+                                                
+                                                <div class="card-block">
+                                
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">First</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.first_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">Second</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.second_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Thired</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.third_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Fourth</p>
+                                                            <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_plan.fourth_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                    </div>
+            
+                                                </div>
+                                                  
+                                              
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">performance to plane Ratio must be four quarter</p> 
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.quarter_financial_ratio.fourth_quarter}}</h6>
+                                                </div>
+                                                
+                                              
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">YTD</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">YTD pysical work Plan</p>
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.YTD_financial_work_plan}}</h6>
+                                                </div>
+                                                
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">YTD pysical work performance</p>
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.YTD_financial_work_performance}}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600"> YTD performance to plan Ratio</p>
+                                                    <h6 class="text-muted f-w-400">{{project_financial_status_report_detail.project_financial_status.YTD_financial_performance_to_plan_ratio}}</h6>
+                                                </div>
+                                             
+                                               
+                                            </div>
+                                          
+                                           
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6"> 
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-3">
+                                                    {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                                                 
+                                                    <div id="chart-1">{{ output|safe }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-3">
+                                                    {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                                                      <div id="chart-2">{{ output2|safe }}</div>
+                                        
+                                                </div>
+                                            </div>
+                                        
+                                       
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-3">
+                                                {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                                             
+                                                <div id="chart-3">{{ output3|safe }}</div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+
+                        <hr>
+                        
+                      
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}

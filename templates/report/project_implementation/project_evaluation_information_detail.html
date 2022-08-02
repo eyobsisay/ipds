@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card user-card-full">
+                                <div class="row m-l-0 m-r-0">
+                                   
+                                    <div class="col-sm-6">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Project Name</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Duration</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Strating Date</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project_starting_date}}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Finishing Date</p>
+                                                 
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project_ending_date}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Consultant</h6>
+                                            <div class="row">
+                                               
+                                                
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Advisor's Type</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project_consultant_type}}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600"> Advisor Name</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.consultant_advisor_name}}</h6>
+                                                </div>
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project contractor</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Contractor Typ</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project_contractor_type}}</h6>
+                                                </div>
+                                                
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Contractor Name</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.contractor_name}}</h6>
+                                                </div>
+                                               
+                                               
+                                            </div>
+                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Measurement</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Measurement choice</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.project_measurement}}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="m-b-10 f-w-600">Measurement Value</p>
+                                                    <h6 class="text-muted f-w-400">{{project_evaluation_information_detail.measurement_value}} {{project_evaluation_information_detail.project_measurement.si_unit}}</h6>
+                                                </div>
+                                               
+                                                </div>
+                                
+                                               
+                                            </div>
+                                           
+                                          
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}

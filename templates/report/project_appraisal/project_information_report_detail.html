@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.maps.js"></script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/maps/fusioncharts.world.js"></script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+         
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/themes/fusioncharts.theme.fusion.js' %}"></script>
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+<!-- Search Filter -->
+
+
+<!-- Search Filter -->
+<div class="col-xl-12 col-md-12">
+    <div class="card user-card-full">
+        <div class="row m-l-0 m-r-0">
+            <div class="col-sm-12">
+                <div class="row">
+            <div class="col-sm-2" >
+                <a href="{% url 'report:project_financial_report_detail' project_information_detail.id %}" class="btn btn-info btn-skew"  style="margin-left:20px"> <i class="feather icon-eye"></i> Financial detail</a>
+            </div>
+            <div class="col-sm-2">
+            <a href="{% url 'report:project_evaluation_report_detail' rs.id rs2.id %}" class="btn btn-info btn-skew"> <i class="feather icon-eye"></i> Project Evaluation</a>    
+        </div>
+    </div>
+    </div>
+            <div class="col-sm-6">
+               
+                <div class="card-block">
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                   
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Project Name</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_name}}</h6>
+                        </div>
+                       
+                    </div>
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Supervising  Information</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Project Supervising Sector</p>
+                         
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_supervising_sector.sector_name}}</h6>
+                        </div>
+                       
+                    </div>
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Owner Information</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">owner name</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.owner_name}}</h6>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">ministry  phone number</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.ministry_phone_number}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">  Main Department Phone Number</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.main_department_phone_number}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">  Email</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.email}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">  Website</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.website}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">  Owner office place</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_owner.owner_office_place}}</h6>
+                        </div>
+                    </div>
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project OutCome</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Direct Beneficiaries</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_intended_beneficiaries.direct_beneficiaries}}}</h6>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Indirect Beneficiaries</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_intended_beneficiaries.indirect_beneficiaries}}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">  Operational Duration</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_duration}}</h6>
+                        </div>
+                       
+                    </div>
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Region</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Regions</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_regions}}</h6>
+                        </div>
+                       
+                        </div>
+        
+                       
+                    </div>
+                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Site</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Regions</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_site.region}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Zone</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_site.zone}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Woreda</p>
+                            <h6 class="text-muted f-w-400">{{project_information_detail.project_site.woreda}}</h6>
+                        </div>
+                       
+                    </div>
+                  
+                   
+                </div>
+            </div>
+            
+    </div>
+</div>
+                    
+                    </div>  
+            </div>
+        </div>
+    </div>
+{%endblock%}
