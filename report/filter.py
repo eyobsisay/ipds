@@ -20,17 +20,21 @@ from project_Appriasal.models import ProjectAppraisal,ProjectAppraisalEvaluation
 from project_implementation.models import ProjectImplementations,ProjectImplementationsMedia
 
 class ProjectAppriasalFilter(django_filters.FilterSet):
+    project_name = django_filters.CharFilter(lookup_expr='icontains')
+    # project_finance__investment_cost_etb = django_filters.NumberFilter()
+    project_finance__investment_cost_etb__gt = django_filters.NumberFilter(field_name='project_finance__investment_cost_etb', lookup_expr='gt')
+    # project_finance__investment_cost_etb__lt = django_filters.NumberFilter(field_name='project_finance__investment_cost_etb', lookup_expr='lt')
 
     class Meta:
         model= ProjectAppraisal
-        fields=['project_name',
+        fields=[
         'project_supervising_sector',
         'project_owner','project_outcome',
         'project_intended_beneficiaries',
-        'project_regions','project_site',
-        'project_finance',
+        'project_regions','project_site__region',
         'project_duration','created_date',
         'project_finance__investment_cost_etb',
+        'project_finance__investment_cost_usd',
         'project_finance__project_source_detail',
         ]
 class ProjectAppraisalEvaluationFilter(django_filters.FilterSet):
@@ -55,6 +59,10 @@ class projectImplementationAndPlanFilter(django_filters.FilterSet):
     
         ]                
 class ProjectImplementationsFilter(django_filters.FilterSet):
+    consultant_advisor_name = django_filters.CharFilter(lookup_expr='icontains')
+    contractor_name = django_filters.CharFilter(lookup_expr='icontains')
+    project_remark__budget_year_obstacle = django_filters.CharFilter(lookup_expr='icontains')
+    project_remark__project_total_limitation = django_filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
         model= ProjectImplementations
@@ -62,9 +70,7 @@ class ProjectImplementationsFilter(django_filters.FilterSet):
         'project_starting_date',
         'project_ending_date',
         'project_consultant_type',
-        'consultant_advisor_name',
         'project_contractor_type',
-        'contractor_name',
         'project_measurement',
         'measurement_value',
         'project_work_status',
@@ -74,7 +80,7 @@ class ProjectImplementationsFilter(django_filters.FilterSet):
         'project_work_status__current_budget_year',
         'project_work_status__pre_b_year_work_perf_in_percent',
         'project_work_status__physical_work_plan_year',
-        'project_work_status__project_work_pane_in_four_quarter',
+        'project_work_status__project_work_pane_in_four_quarter__first_quarter',
         'project_work_status__project_work_performance_quarter',
         'project_work_status__YTD_physical_work_plan',
         'project_work_status__YTD_physical_work_performance',
@@ -89,8 +95,7 @@ class ProjectImplementationsFilter(django_filters.FilterSet):
         'project_financial_status__YTD_financial_work_performance',
         'project_financial_status__YTD_financial_performance_to_plan_ratio',
 
-        'project_remark__budget_year_obstacle',
-        'project_remark__project_total_limitation',
+       
         
 
         ]

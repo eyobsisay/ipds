@@ -53,24 +53,25 @@
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
                                                         <label class="focus-label">project_site</label>
-                                                        {% render_field filter.form.project_site class="form-control floating"  %}
+                                                        {% render_field filter.form.project_site__region class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label">project finance</label>
-                                                        {% render_field filter.form.project_finance class="form-control floating"  %}
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-3">
-                                                    <div class="form-group form-focus">
-                                                        <label class="focus-label">Investment Cost Etb</label>
+                                                        <label class="focus-label">project finance ETB</label>
                                                         {% render_field filter.form.project_finance__investment_cost_etb class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group form-focus">
+                                                        <label class="focus-label">project finance USD</label>
+                                                        {% render_field filter.form.project_finance__investment_cost_usd class="form-control floating"  %}
+                                                        
+                                                    </div>
+                                                </div>
+                                               
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
                                                         <label class="focus-label">project finance project source detail</label>
