@@ -1,0 +1,666 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+ <div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                    <div class="page-body">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card user-card-full">
+                                <div class="row m-l-0 m-r-0">
+                                   
+                                        
+                            
+                                                                                <div class="col-sm-6">
+                                                                
+                                                                                    <div class="card-block">
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                                                                    
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Project Name</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_name}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Supervising  Information</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Project Supervising Sector</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_supervising_sector.sector_name}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Owner Information</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">owner name</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.owner_name}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">ministry  phone number</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.ministry_phone_number}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Main Department Phone Number</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.main_department_phone_number}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Email</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.email}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Website</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.website}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Owner office place</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_owner.owner_office_place}}</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project OutCome</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Direct Beneficiaries</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_intended_beneficiaries.direct_beneficiaries}}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Indirect Beneficiaries</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_intended_beneficiaries.indirect_beneficiaries}}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Operational Duration</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_duration}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Region</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Regions</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_regions}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                            
+                                                                            
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Site</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Regions</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_site.region}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Zone</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_site.zone}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Woreda</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_site.woreda}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                    
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="card-block">
+                                                                                    
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Investment Cost</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Project Investment Cost IN Million ETB</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.investment_cost_etb}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Project Investment Cost IN Million USD</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.investment_cost_usd}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Financial Source</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Source</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_finance_source}}</h6>
+                                                                                            </div>
+                                                                                            {%if project_appraisal_detail.project_finance.project_finance_source == 'Domestic' or project_appraisal_detail.project_finance.project_finance_source == 'Domestic & Abroad' %}
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Domestic</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.domestic}}</h6>
+                                                                                            </div>
+                                                                                            {%else%}
+
+                                                                                            {%endif%}
+                                                                                            {%if project_appraisal_detail.project_finance.project_finance_source == 'Abroad' or project_appraisal_detail.project_finance.project_finance_source == 'Domestic & Abroad' %}
+
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">  Abroad</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.abroad}}</h6>
+                                                                                            </div>
+                                                                                            {%else%}
+
+                                                                                            {%endif%}
+                                                                                        
+                                                                                        </div>
+                                                                                        {%if  project_appraisal_detail.project_finance.project_source_detail.abroad.name == 'Loan' or project_appraisal_detail.project_finance.project_source_detail.domestic.name == 'Bank Loan' %}
+
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Loan</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Loaner Name</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_loan.loaner_name}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Loan Amount in ETB</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_loan.loan_amount_etb}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> Loan Amount in USD</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_loan.loan_amount_usd}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> Loan Duration</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_loan.loan_duration}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        {%else%}
+
+                                                                                        {%endif%}
+                                                                                        {%if project_appraisal_detail.project_finance.project_finance_source == 'Abroad' or project_appraisal_detail.project_finance.project_finance_source == 'Domestic & Abroad'  and project_appraisal_detail.project_finance.project_finance_source.abroad == 'Grant Aid' %}
+
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">External aid</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Aider Name</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_aid.aider_name}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Aid Amount in ETB</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_aid.aid_amount_etb}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> Aid Amount in USD</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.external_aid.aid_amount_usd}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        {%else%}
+
+                                                                                        {%endif%}
+                                                                                        {%if project_appraisal_detail.project_finance.project_finance_source == 'Domestic & Abroad'   %}
+
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Joint</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Country  Name</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.jointly.name_of_country}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">Inland share in Mill.bir</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.jointly.inland_share_etb}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> Abored share in mill.birr</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_appraisal_detail.project_finance.project_source_detail.jointly.abroad_share_etb}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        {%else%}
+
+                                                                                        {%endif%}
+                                                                                    
+                                                                                    </div>
+                                                                                    <div class="col-sm-6">
+                                                                            
+                                                                                        <a href="{% url 'report:gallery' project_appraisal_detail.id %}" class="btn btn-info btn-skew"> <i class="feather icon-eye"></i> Apprasal Gallery</a>  
+                                                                                    </div>
+                                                                                
+                                                                                </div>
+
+
+                                                                            {% comment %} evaluation  {% endcomment %}
+                                                                            <div class="col-sm-6">
+                                                                                <div class="card-block">
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
+                                                                                
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">project project Apperisal Evaluation</h6>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Appraisal Result</p>
+                                                                                        
+                                                                                            <h6 class="text-muted f-w-400">{{project_appraisal_detail.appraisal_result}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Date of Appraisal Result Sent</p>
+                                                                                        
+                                                                                            <h6 class="text-muted f-w-400">{{project_appraisal_detail.arrival_date_of_project_appraisal_to_pds}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Reason</p>
+                                                                                        
+                                                                                            <h6 class="text-muted f-w-400">{{project_appraisal_detail.reason}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Implimentaion & Monitoring plan</h6>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Arrival Date of THe paln For evaluation to PDS</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_and_plan.arrival_date_of_plane_for_evaluation_pdm}}</h6>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Evaluation Result</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_and_plan.evaluation_result}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">  Reason</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_and_plan.reason.}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                
+                                                                                 
+                                                                                
+                                                                                
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                             
+                                                                            <div class="col-sm-12"> 
+                                                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Implementations </h6>
+                                                                                
+                                                                            </div>
+                                                                            
+                                                                            {% comment %} piroject implementation information {% endcomment %}
+                                                                            <div class="col-sm-6">
+                                                                                <div class="card-block">
+                                                                                    
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Duration</h6>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Strating Date</p>
+                                                                                        
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.project_starting_date}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Finishing Date</p>
+                                                                                        
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.project_ending_date}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Consultant</h6>
+                                                                                    <div class="row">
+                                                                                    
+                                                                                        
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Advisor's Type</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.project_consultant_type}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600"> Advisor Name</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.consultant_advisor_name}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project contractor</h6>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Contractor Typ</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.project_contractor_type}}</h6>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Contractor Name</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.contractor_name}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    
+                                                                                    </div>
+                                                                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Measurement</h6>
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Measurement choice</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.project_measurement}}</h6>
+                                                                                        </div>
+                                                                                        <div class="col-sm-6">
+                                                                                            <p class="m-b-10 f-w-600">Measurement Value</p>
+                                                                                            <h6 class="text-muted f-w-400">{{project_implementation_detail.measurement_value}} {{project_implementation_detail.project_measurement.si_unit}}</h6>
+                                                                                        </div>
+                                                                                    
+                                                                                    
+                                                                        
+                                                                                    
+                                                                                    </div>
+                                                                                
+                                                                                
+                                                                                
+                                                                                </div>
+                                                                            </div>
+                                                                                {% comment %} remark {% endcomment %}
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="card-block">
+                                                                                        
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project project implementation detail</h6>
+                                                                                        <div class="row">
+                                                                                            {%for project_implementation_detail in project_implementation_detail.project_remark.all %}
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Budget Year Obstacle</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.budget_year_obstacle}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Project Total Limitations </p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_total_limitation}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Project Comments</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_comment}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Project Photo or Video</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_file}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600"></h6>
+
+                                                                                            
+                                                                                            </div>
+                                                                                            <hr>
+
+                                                                                    
+                                                                                            {%endfor%}
+                                                                                        
+                                                                                        </div>
+                                                                                      
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                                {% comment %} work status  {% endcomment %}
+
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="card-block">
+                                                                                        
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project work Status</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">physical work Status</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.work_status}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Current Budget Year</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.current_budget_year}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Previous b.Year physical work performance in %</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.pre_b_year_work_perf_in_percent}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">physical Work Plan</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.physical_work_plan_year}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">quarter physical work plan</h6>
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_pane_in_four_quarter.first_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_pane_in_four_quarter.second_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_pane_in_four_quarter.third_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_pane_in_four_quarter.fourth_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">quarter physical performance</h6>
+                                                                                            
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_performance_quarter.first_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_performance_quarter.second_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_performance_quarter.third_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_work_performance_quarter.fourth_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">quarter physical performance to plan Ratio</h6>
+                                                                                            
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_performance_to_plan_ratio.first_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_performance_to_plan_ratio.second_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_performance_to_plan_ratio.third_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.project_performance_to_plan_ratio.fourth_quarter}}</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                            
+                                                                                    
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">YTD</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">YTD physical work Plan</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.YTD_physical_work_plan}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">YTD physical work performance</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.YTD_physical_work_performance}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> YTD performance to plan Ratio</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_work_status.YTD_performance_to_plan_ratio}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        
+                                                                                        </div>
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                                    {% comment %} finance status {% endcomment %}
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="card-block">
+                                                                                        
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project Financial Status</h6>
+                                                                                        <div class="row">
+                                                                                            
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">Previous b.Year financial work performance in %</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.pre_b_year_financial_performance_birr}}%</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <p class="m-b-10 f-w-600">pysical Work Plan</p>
+                                                                                            
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.budget_financial_plan}}%</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">qurater pysical Financial plan</h6>
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.first_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.second_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.third_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.fourth_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">qurater pysical Financial performance</h6>
+                                                                                            
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.first_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.second_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.third_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_plan.fourth_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">performance to plane Ratio</h6>
+                                                                                            
+                                                                                            <div class="card-block">
+                                                                            
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">First</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_performance.first_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">Second</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_performance.second_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Thired</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_performance.third_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <p class="m-b-10 f-w-600">  Fourth</p>
+                                                                                                        <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.quarter_financial_performance.fourth_quarter}}%</h6>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                        
+                                                                                            </div>
+                                                                                            
+                                                                                        
+                                                                                    
+                                                                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">YTD</h6>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">YTD pysical work Plan</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.YTD_financial_work_plan}}</h6>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600">YTD pysical work performance</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.YTD_financial_work_performance}}</h6>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <p class="m-b-10 f-w-600"> YTD performance to plan Ratio</p>
+                                                                                                <h6 class="text-muted f-w-400">{{project_implementation_detail.project_financial_status.YTD_financial_performance_to_plan_ratio}}</h6>
+                                                                                            </div>
+                                                                                        
+                                                                                        
+                                                                                        </div>
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    </div>
+                                                                                    <div class="col-sm-6">
+                                                                                        
+                                                                                        <a href="{% url 'report:gallery_implementation' project_implementation_detail.id %}" class="btn btn-info btn-skew"> <i class="feather icon-eye"></i> Implementations Gallery</a>  
+                                                                                    </div>
+                                                                                </div>
+                                                                            
+                                                                            
+                             
+                             </div>
+                          </div>
+                      </div>  
+                  </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

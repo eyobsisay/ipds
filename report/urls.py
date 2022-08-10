@@ -42,6 +42,7 @@ urlpatterns = [
     path('project_remark_report', views.project_remark_report, name='project_remark_report'),
     path('project_remark_report_detail/<int:id>/', views.project_remark_report_detail, name='project_remark_report_detail'),
     path('dashboard>/', views.dashboard, name='dashboard'),
+    path('all_details>/<int:id>/', views.all_details, name='all_details'),
 
     path('gallery/<int:id>/', views.gallery, name='gallery'),
     path('gallery_implementation/<int:id>/', views.gallery_implementation, name='gallery_implementation'),

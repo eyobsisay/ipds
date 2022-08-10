@@ -1,4 +1,5 @@
 from faulthandler import enable
+from functools import cache
 from multiprocessing import context
 from pickletools import read_bytes1
 from sys import implementation
@@ -405,7 +406,30 @@ def project_remark_report_detail(request,id):
     return render(request,templet_name,context) 
 
 # end fo appraisal report
+def all_details(request,id):
+  templet_name='report/all_in_one_detail.html'
+  project_appraisal_detail=ProjectAppraisal.objects.get(id=id)
+  
+  
+  try:
+    project_implementation_detail=ProjectImplementations.objects.get(project_id=id)
+  except ProjectImplementations.DoesNotExist:
+    project_implementation_detail=None
 
+  try:
+   Project_appraisal_evaluation=ProjectAppraisalEvaluation.objects.get(project_appraisal_id=id)
+  except ProjectAppraisalEvaluation.DoesNotExist:
+    Project_appraisal_evaluation=None
+  try:
+   project_implementation_and_plan=projectImplementationAndPlan.objects.get(project_appraisal_id=id)
+  except projectImplementationAndPlan.DoesNotExist:
+    project_implementation_and_plan=None    
+
+  context={'project_appraisal_detail':project_appraisal_detail,
+  'project_implementation_detail':project_implementation_detail,
+  'Project_appraisal_evaluation':Project_appraisal_evaluation,
+  'project_implementation_and_plan':project_implementation_and_plan}
+  return render(request,templet_name,context)
 def dashboard(request):
     templet_name='report/dashboard.html'
     project_implementations=ProjectImplementations.objects.all()
@@ -817,255 +841,69 @@ def main_dashboard(request):
     last_project_appraisal=ProjectAppraisal.objects.all().order_by('-id')[:5]
     last_project_implementation=ProjectImplementations.objects.all().order_by('-id')[:5]
     sample_data=sample()
-    chartObj = FusionCharts( 'scrollcombidy2d', 'ex1', '600', '400', 'chart-8', 'json', """{
-  "chart": {
-    "caption": "Analysing graph investment over completion rate",
-    "subcaption": "By province",
-    "yaxisname": "Investement ",
-    "syaxisname": "Subsidies % of Income",
-    "labeldisplay": "rotate",
-    "snumbersuffix": "%",
-    "scrollheight": "10",
-    "numvisibleplot": "10",
-    "drawcrossline": "1",
-    "theme": "fusion"
-  },
-  "categories": [
-    {
-      "category": [
-        {
-          "label": "Addis abeba"
-        },
-        {
-          "label": "Oromiya"
-        },
-        {
-          "label": "Amahara"
-        },
-        {
-          "label": "Tigeray"
-        },
-        {
-          "label": "North"
-        },
-        {
-          "label": "adama"
-        },
-        {
-          "label": "mekele"
-        },
-        {
-          "label": "bale"
-        },
-        {
-          "label": "Mizan"
-        },
-        {
-          "label": "jima"
-        },
-       
-      ]
+    qs=ProjectImplementations.objects.all()
+    
+    name_dic={}
+    name_dic['category'] = []
+    name_dic1= []
+    name_dic2= []
+    name_dic3 = []
+
+    for q in qs:
+      data={}
+      data1={}
+      data2={}
+      data3={}
+      data['label']=q.project.project_site.region.name
+      data1['value']=q.project_financial_status.YTD_financial_work_performance
+      data2['value']=q.project_work_status.project_work_performance_quarter.fourth_quarter
+
+      data3['value']=q.project_financial_status.quarter_financial_performance.fourth_quarter
+      name_dic['category'].append(data)
+      name_dic1.append(data1)
+      name_dic2.append(data2)
+      name_dic3.append(data3)
+
+
+    sample2={}
+    sample2['chart']={
+
+      "caption": "Analysing graph investment over completion rate",
+      "subcaption": "By province",
+      "yaxisname": "Investement ",
+      "syaxisname": "Subsidies % of Income",
+      "labeldisplay": "rotate",
+      "snumbersuffix": "%",
+      "scrollheight": "10",
+      "numvisibleplot": "10",
+      "drawcrossline": "1",
+      "theme": "fusion"
     }
-  ],
-  "dataset": [
-    {
-      "seriesname": "Total Investemet",
-      "plottooltext": "Investments $dataValue",
-      "data": [
-       
-       
-        {
-          "value": "24168"
-        },
-        {
-          "value": "54237"
-        },
-        {
-          "value": "94135"
-        },
-        {
-          "value": "208237"
-        },
-        {
-          "value": "97509"
-        },
-        {
-          "value": "59157"
-        },
-        {
-          "value": "73835"
-        },
-        {
-          "value": "8895"
-        },
-        {
-          "value": "14272"
-        },
-        {
-          "value": "51080"
-        }
-      ]
-    },
-    {
-      "seriesname": "Number of project",
-      "renderas": "area",
-      "showanchors": "0",
-      "plottooltext": "project count: $dataValue",
-      "data": [
-        {
-          "value": "22"
-        },
-        {
-          "value": "3"
-        },
-        {
-          "value": "4"
-        },
-        {
-          "value": "5"
-        },
-        {
-          "value": "9"
-        },
-        {
-          "value": "3"
-        },
-        {
-          "value": "8"
-        },
-        {
-          "value": "3"
-        },
-        {
-          "value": "2"
-        },
-        {
-          "value": "1"
-        }
-      ]
-    },
-    {
-      "seriesname": "project completion rate %",
-      "parentyaxis": "S",
-      "renderas": "line",
-      "plottooltext": "$dataValue completion rate",
-      "showvalues": "0",
-      "data": [
-        {
-          "value": "28.0"
-        },
-        {
-          "value": "35.2"
-        },
-        {
-          "value": "23.9"
-        },
-        {
-          "value": "11.8"
-        },
-        {
-          "value": "18.0"
-        },
-        {
-          "value": "26.9"
-        },
-        {
-          "value": "11.1"
-        },
-        {
-          "value": "11.2"
-        },
-        {
-          "value": "24.0"
-        },
-        {
-          "value": "18.9"
-        },
-        {
-          "value": "35.6"
-        },
-        {
-          "value": "37.9"
-        },
-        {
-          "value": "12.9"
-        },
-        {
-          "value": "27.6"
-        },
-        {
-          "value": "40.5"
-        },
-        {
-          "value": "19.9"
-        },
-        {
-          "value": "15.6"
-        },
-        {
-          "value": "28.2"
-        },
-        {
-          "value": "23.3"
-        },
-        {
-          "value": "26.2"
-        },
-        {
-          "value": "16.9"
-        },
-        {
-          "value": "41.9"
-        },
-        {
-          "value": "62.1"
-        },
-        {
-          "value": "31.2"
-        }
-      ]
-    }
-  ]
-}""")
-    chartObj2 = FusionCharts( 'angulargauge', 'ex1', '600', '400', 'chart-9', 'json', """{
-  "chart": {
-    "caption": "Response Rate",
-    "lowerlimit": "0",
-    "upperlimit": "100",
-    "showvalue": "1",
-    "numbersuffix": "%",
-    "theme": "fusion",
-    "showtooltip": "0"
-  },
-  "colorrange": {
-    "color": [
-      {
-        "minvalue": "0",
-        "maxvalue": "50",
-        "code": "#F2726F"
-      },
-      {
-        "minvalue": "50",
-        "maxvalue": "75",
-        "code": "#FFC533"
-      },
-      {
-        "minvalue": "75",
-        "maxvalue": "100",
-        "code": "#62B58F"
-      }
-    ]
-  },
-  "dials": {
-    "dial": [
-      {
-        "value": "81"
-      }
-    ]
-  }
-}""")
+    sample2['categories']=[]
+    sample2['dataset']=[]
+    
+    sample2['categories'].append(name_dic)
+    # sample2['dataset'].append(name_dic1)
+    sample2['dataset'].append( {"seriesname": "Ytd peformance", "plottooltext": "Investments $dataValue" ,'data':name_dic1})
+    # sample2['dataset'].append(name_dic2)
+    sample2['dataset'].append( {"seriesname": "project work performance rate",
+                                  "renderas": "area",
+                                  "showanchors": "0",
+                                  "plottooltext": "project count: $dataValue",
+                                  'data':name_dic3})
+  
+    sample2['dataset'].append( {"seriesname": "project finance performance rate %",
+                                      "parentyaxis": "S",
+                                      "renderas": "line",
+                                      "plottooltext": "$dataValue completion rate",
+                                      "showvalues": "0",
+                                      'data':name_dic2})
+                                
+
+    chartObj = FusionCharts( 'scrollcombidy2d', 'ex1', '600', '400', 'chart-8', 'json',sample2 )
+ 
+    
     context={'output8':chartObj.render(),
-    'output9': chartObj2.render(),
     'last_project_appraisal':last_project_appraisal,
     'last_project_implementation':last_project_implementation}
     context.update(sample_data)
