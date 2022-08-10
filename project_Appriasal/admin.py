@@ -510,11 +510,25 @@ class projectImplementationAndPlanAdmin(admin.ModelAdmin):
         'is_active',
     )
     date_hierarchy = 'updated_at'
+class ProjectAppraisalMediaMediaAdmin(admin.ModelAdmin):
 
+    
+    list_display = (
+        'id',
+        'project',
+        'gallery',
+        'description',
+        'video_file',
+        'quarter',
+        'created_date',
+        'updated_at',
+        'is_active',
+        
+    )
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
-
+_register(models.ProjectAppraisalMedia, ProjectAppraisalMediaMediaAdmin)
 
 _register(models.ProjectSupervisingSector, ProjectSupervisingSectorAdmin)
 _register(models.ProjectOwner, ProjectOwnerAdmin)

@@ -41,7 +41,13 @@ class QuarterWorkPerformance(models.Model):
     first_quarter=models.IntegerField(help_text="quarter year plan  in %")
     second_quarter=models.IntegerField(help_text="quarter year plan  in %")
     third_quarter=models.IntegerField(help_text="quarter year plan  in %")  
-    fourth_quarter=models.IntegerField(help_text="quarter year plan  in %")    
+    fourth_quarter=models.IntegerField(help_text="quarter year plan  in %") 
+# quarter work performance to plan ratio for four quarter    
+class QuarterWorkPerformanceToPlanRatio(models.Model):
+    first_quarter=models.IntegerField(help_text="quarter year plan  in %")
+    second_quarter=models.IntegerField(help_text="quarter year plan  in %")
+    third_quarter=models.IntegerField(help_text="quarter year plan  in %")  
+    fourth_quarter=models.IntegerField(help_text="quarter year plan  in %")        
 # project work status detail    
 class ProjectWorkStatus(models.Model) :
     work_status=models.ForeignKey(WorkStatusType, on_delete=models.CASCADE)
@@ -50,7 +56,7 @@ class ProjectWorkStatus(models.Model) :
     physical_work_plan_year=models.IntegerField(help_text="short description of the BUdget year's plan in %")
     project_work_pane_in_four_quarter=models.ForeignKey(QuarterWorkPlane, on_delete=models.CASCADE,help_text="short description of the quarter year's plan in number")
     project_work_performance_quarter=models.ForeignKey(QuarterWorkPerformance,on_delete=models.CASCADE,help_text="Numerical description of the quarter year performance")
-    project_performance_to_plan_ratio=models.IntegerField(help_text="Performance to plan ratio")
+    project_performance_to_plan_ratio=models.ForeignKey(QuarterWorkPerformanceToPlanRatio,on_delete=models.CASCADE,help_text="Numerical description of the quarter year performance to plan Ratio")
     YTD_physical_work_plan=models.IntegerField(help_text="project total physical plan")
     YTD_physical_work_performance=models.IntegerField(help_text="YTD physical work performance")
     YTD_performance_to_plan_ratio=models.IntegerField(help_text="total physical work performance to plan ratio")
@@ -107,3 +113,20 @@ class ProjectImplementations(models.Model):
     project_work_status=models.ForeignKey(ProjectWorkStatus,on_delete=models.CASCADE)
     project_financial_status=models.ForeignKey(FinancialStatus,on_delete=models.CASCADE)
     project_remark=models.ManyToManyField(ProjectRemark)
+
+class ProjectImplementationsMedia(models.Model):
+    Quarter = (
+      ('First', 'First'),
+      ('second', 'Second'),
+      ('Third', 'Third'),
+      ('Forth', 'Forth')
+   )
+    project=models.ForeignKey(ProjectImplementations, on_delete=models.CASCADE)
+    gallery=models.ImageField(upload_to='project_implementations_image',null=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    quarter=models.CharField(max_length=30,choices=Quarter)
+    video_file = models.FileField(upload_to='videos/', null=True, )
+    created_date=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)   
+    is_active=models.BooleanField(default=True)
+

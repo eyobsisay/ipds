@@ -69,7 +69,7 @@
                                                 
                                                 <th>Project Comments</th>
                                                 <th>Project Photo or Video</th>
-                                                
+                                                <th>Gallery</th>
                                                 
                                             </tr>
                                         </thead>
@@ -90,6 +90,7 @@
                                                 <td>{{remark.project_total_limitation}}</td>
                                                 <td>{{remark.project_comment}}</td>
                                                 <td>{{remark.project_file}}</td>
+                                                <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
                                                 </tr>
                                                 {%endfor%}
                                               

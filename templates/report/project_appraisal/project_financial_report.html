@@ -117,6 +117,7 @@
                                                 
                                                 <th>Domestic</th>
                                                 <th>Abored</th>
+                                                <th>Gallery</th>
                                               
                                                 
                                             </tr>
@@ -132,6 +133,8 @@
                                                 <td>{{rs.project_finance.project_finance_source}}</td>
                                                 <td>{{rs.project_finance.project_source_detail.domestic}}</td>
                                                 <td>{{rs.project_finance.project_source_detail.abroad}}</td>
+                                                 <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
+
                                                 
                                             </tr>
                                             {%endfor%}

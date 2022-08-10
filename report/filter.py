@@ -16,8 +16,8 @@ from django import forms
 
 import django_filters
 from django_filters import rest_framework as filters
-from project_Appriasal.models import ProjectAppraisal,ProjectAppraisalEvaluation,projectImplementationAndPlan
-from project_implementation.models import ProjectImplementations
+from project_Appriasal.models import ProjectAppraisal,ProjectAppraisalEvaluation,projectImplementationAndPlan,ProjectAppraisalMedia
+from project_implementation.models import ProjectImplementations,ProjectImplementationsMedia
 
 class ProjectAppriasalFilter(django_filters.FilterSet):
 
@@ -95,4 +95,23 @@ class ProjectImplementationsFilter(django_filters.FilterSet):
 
         ]
 
+class ProjectAppraisalMediaFilter(django_filters.FilterSet):
 
+    class Meta:
+        model= ProjectAppraisalMedia
+        fields=['quarter',
+        
+       
+    
+        ]  
+
+class ProjectImplementationsMediaFilter(django_filters.FilterSet):
+
+    class Meta:
+        model= ProjectImplementationsMedia
+        fields=['quarter',
+        'project__project_starting_date'
+        
+       
+    
+        ]  

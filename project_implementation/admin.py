@@ -191,7 +191,23 @@ class QuarterWorkPerformanceAdmin(admin.ModelAdmin):
         'second_quarter',
         'third_quarter',
         'fourth_quarter',
-    )    
+    )
+class QuarterWorkPerformanceToPlanRatioAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'first_quarter',
+        'second_quarter',
+        'third_quarter',
+        'fourth_quarter',
+    )
+    list_filter = (
+        'id',
+        'first_quarter',
+        'second_quarter',
+        'third_quarter',
+        'fourth_quarter',
+    )        
 
 
 class FinancialStatusAdmin(admin.ModelAdmin):
@@ -282,16 +298,33 @@ class ProjectImplementationsAdmin(admin.ModelAdmin):
         'project_financial_status',
     )
     raw_id_fields = ('project_remark',)
+class ProjectImplementationsMediaAdmin(admin.ModelAdmin):
 
+    
+    list_display = (
+        'id',
+        'project',
+        'gallery',
+        'description',
+        'video_file',
+        'quarter',
+        'created_date',
+        'updated_at',
+        'is_active',
+        
+    )
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
 
+_register(models.ProjectImplementationsMedia, ProjectImplementationsMediaAdmin)
 
 _register(models.ConsultantType, ConsultantTypeAdmin)
 _register(models.Measurement, MeasurementAdmin)
 _register(models.WorkStatusType, WorkStatusTypeAdmin)
 _register(models.QuarterWorkPlane, QuarterWorkPlaneAdmin)
+_register(models.QuarterWorkPerformanceToPlanRatio, QuarterWorkPerformanceToPlanRatioAdmin)
+
 _register(models.ProjectWorkStatus, ProjectWorkStatusAdmin)
 _register(models.QuarterFinancialPlan, QuarterFinancialPlanAdmin)
 _register(models.QuarterFinancialPerformance,QuarterFinancialPerformanceAdmin)

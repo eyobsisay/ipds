@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+ {%load static %} 
+ {% block content %}
+ {% load widget_tweaks %}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="card" style="padding:10px">
+                   
+                        <form method="get">
+                            <div class="row filter-row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Quarter</label>
+                                                {% render_field filter.form.quarter class="form-control floating"  %}
+                                            </div>
+                                        </div>
+                                      {%if  filter.form.project__project_starting_date %}
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">project Start Date</label>
+                                                {% render_field filter.form.project__project_starting_date type="date" class="form-control floating"  %}
+                                            </div>
+                                        </div>
+                                        {%else%}
+
+                                        {%endif%}
+                                      
+                                        
+                                        <div class="col-sm-6 col-md-2 offset-10"> 
+                                          
+                                            <input type="submit" class="btn btn-success btn-block " style="float:right;"  value="Search"/>
+                                            {% comment %} <a href="#" class="btn btn-success btn-block">Search</a>   {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </form>
+                </div>
+                <!-- Page-header start -->
+                <div class="page-header">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <h4>Project Gallery</h4>
+                                    <span>{{project.project}} {{project.project_name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <!-- Page-header end -->
+
+                    <!-- Page body start -->
+                    <div class="page-body gallery-page">
+                        <div class="row">
+                            <!-- image grid -->
+                            <div class="col-sm-12">
+                                <!-- Image grid card start -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div style="float:right">
+                                            {% if data_image.has_other_pages %}
+                                            
+                                            <ul class="pagination" >
+                                              {% if data_image.has_previous %}
+                                                <li><a class="page-link" href="?page={{ data_image.previous_page_number }}">&laquo;</a></li>
+                                              {% else %}
+                                                <li class="disabled page-link"><span>&laquo;</span></li>
+                                              {% endif %}
+                                              {% for i in data_image.paginator.page_range %}
+                                                {% if users.number == i %}
+                                                  <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                                {% else %}
+                                                  <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                                {% endif %}
+                                              {% endfor %}
+                                              {% if data_image.has_next %}
+                                                <li><a class="page-link" href="?page={{ data_image.next_page_number }}">&raquo;</a></li>
+                                              {% else %}
+                                                <li class="disabled page-link "><span>&raquo;</span></li>
+                                              {% endif %}
+                                            </ul>
+                                            {% endif %}
+                                            </div>
+                                        <h5>Image Grid </h5>
+                                      
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="row">
+                                            {{gallery}}
+                                            {%for image in data_image%}
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="thumbnail">
+                                                    <div class="thumb">
+                                                        <a href="{{image.gallery.url}}" data-lightbox="1" data-title="My caption 1">
+                                                            <img src="{{image.gallery.url}}" alt="" class="img-fluid img-thumbnail">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {%endfor%}
+                                           
+                                       
+                                          
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                                <!-- Image grid card end -->
+                               
+                            </div>
+                          
+                        <!-- video grid -->
+                        <div class="col-sm-12">
+                            <!-- Video Grid card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Video Grid </h5>
+                                    <div style="float:right">
+                                        {% if data_video.has_other_pages %}
+                                        
+                                        <ul class="pagination" >
+                                          {% if data_video.has_previous %}
+                                            <li><a class="page-link" href="?page={{ data_video.previous_page_number }}">&laquo;</a></li>
+                                          {% else %}
+                                            <li class="disabled page-link"><span>&laquo;</span></li>
+                                          {% endif %}
+                                          {% for i in data_video.paginator.page_range %}
+                                            {% if users.number == i %}
+                                              <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                            {% else %}
+                                              <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                            {% endif %}
+                                          {% endfor %}
+                                          {% if data_video.has_next %}
+                                            <li><a class="page-link" href="?page={{ data_video.next_page_number }}">&raquo;</a></li>
+                                          {% else %}
+                                            <li class="disabled page-link "><span>&raquo;</span></li>
+                                          {% endif %}
+                                        </ul>
+                                        {% endif %}
+                                        </div>
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        {%for video in data_video %}
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="thumbnail">
+                                                <div class="thumb">
+                                                    <video  controls="controls" preload="preload">
+                                                        <source src="{{video.video_file.url}}" type="video/mp4"></source>
+                                                    </video>
+                                                    <div class="embed-responsive embed-responsive-4by3">
+                                                        <iframe allowfullscreen="" src="{{video.video.url}}"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {%endfor%}
+                                    
+                                    </div>
+                                </div>
+                                {% include "report/pagination.html" %}
+                            </div>
+                            <!-- Video Grid card end -->
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Page body end -->
+                </div>
+            </div>
+            <!-- Main-body end -->
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

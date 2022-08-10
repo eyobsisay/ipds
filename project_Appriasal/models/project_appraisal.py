@@ -188,4 +188,21 @@ class ProjectAppraisal(models.Model):
     def __str__(self):
         return self.project_name
 
+class ProjectAppraisalMedia(models.Model):
+    Quarter = (
+      ('First', 'First'),
+      ('second', 'Second'),
+      ('Third', 'Third'),
+      ('Forth', 'Forth')
+   )
+    project=models.ForeignKey(ProjectAppraisal, on_delete=models.CASCADE)
+    gallery=models.ImageField(upload_to='project_appraisal_image',null=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    video_file = models.FileField(upload_to='videos/', null=True, verbose_name="")
+    quarter=models.CharField(max_length=30,choices=Quarter)
+    created_date=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
+
+    is_active=models.BooleanField(default=True)
+
 

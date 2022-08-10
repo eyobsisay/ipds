@@ -24,14 +24,14 @@
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label">project_work_status__work_status</label>
+                                                        <label class="focus-label">Work status</label>
                                                         {% render_field filter.form.project_work_status__work_status type="date" class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label">project_work_status__current_budget_year</label>
+                                                        <label class="focus-label">current budget year</label>
                                                         {% render_field filter.form.project_work_status__current_budget_year type="date" class="form-control floating"  %}
                                                         
                                                     </div>
@@ -39,42 +39,42 @@
                                               
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label">project_work_status__pre_b_year_work_perf_in_percent</label>
+                                                        <label class="focus-label">project work status</label>
                                                         {% render_field filter.form.project_work_status__pre_b_year_work_perf_in_percent  type="date" class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label"> project_work_status__physical_work_plan_year</label>
+                                                        <label class="focus-label"> physical work plan year</label>
                                                         {% render_field filter.form.project_work_status__physical_work_plan_year class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label">project_work_status__project_work_pane_in_four_quarter</label>
+                                                        <label class="focus-label">project work pane in four quarter</label>
                                                         {% render_field filter.form.project_work_status__project_work_pane_in_four_quarter  type="date" class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label"> project_work_status__project_work_performance_quarter</label>
+                                                        <label class="focus-label"> project work performance quarter</label>
                                                         {% render_field filter.form.project_work_status__project_work_performance_quarter class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label"> project_work_status__project_work_performance_quarter</label>
+                                                        <label class="focus-label"> project work performance quarter</label>
                                                         {% render_field filter.form.project_work_status__YTD_physical_work_plan class="form-control floating"  %}
                                                         
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-md-3">
                                                     <div class="form-group form-focus">
-                                                        <label class="focus-label"> project_work_status__project_work_performance_quarter</label>
+                                                        <label class="focus-label"> project work performance quarter</label>
                                                         {% render_field filter.form.project_work_status__YTD_performance_to_plan_ratio class="form-control floating"  %}
                                                         
                                                     </div>
@@ -119,6 +119,7 @@
                                                 <th rowspan="0">YTD pysical<br> work Plan</th>
                                                 <th rowspan="0">YTD pysical work<br> performance</th>
                                                 <th rowspan="0">YTD performance to<br> plan Ratio</th>
+                                                <th rowspan="0">Gallery</th>
                                                 
                                             </tr>
                                             <tr>
@@ -150,10 +151,12 @@
                                                 <td>{{rs.project_work_status.project_work_performance_quarter.second_quarter}}%</td>
                                                 <td>{{rs.project_work_status.project_work_performance_quarter.third_quarter}}%</td>
                                                 <td>{{rs.project_work_status.project_work_performance_quarter.fourth_quarter}}%</td>
-                                                <td>{{rs.project_work_status.project_performance_to_plan_ratio}}</td>
-                                                <td>{{rs.project_work_status.YTD_physical_work_plan}}</td>
-                                                <td>{{rs.project_work_status.YTD_physical_work_performance}}</td>
-                                                <td>{{rs.project_work_status.YTD_performance_to_plan_ratio}}</td>
+                                                <td>{{rs.project_work_status.project_performance_to_plan_ratio}}%</td>
+                                                <td>{{rs.project_work_status.YTD_physical_work_plan}}%</td>
+                                                <td>{{rs.project_work_status.YTD_physical_work_performance}}%</td>
+                                                <td>{{rs.project_work_status.YTD_performance_to_plan_ratio}}%</td>
+                                                <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
+
                                             </tr>
                                             {%endfor%}
                                         

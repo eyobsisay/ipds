@@ -104,6 +104,7 @@
                                                 <th>Contractor Name</th>
                                                 <th>Measurement choice</th>
                                                 <th>Measurement Value</th>
+                                                <th>Gallery</th>
                                                 
                                             </tr>
                                         </thead>
@@ -120,6 +121,7 @@
                                                 <td>{{rs.contractor_name}}</td>
                                                 <td>{{rs.project_measurement}}</td>
                                                 <td>{{rs.measurement_value}}</td>
+                                                <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
                                             </tr>
                                             {%endfor%}
                                           

@@ -136,6 +136,7 @@
                                                 <th>Second choice</th>
                                                 <th>Thired</th>
                                                 <th>Fourth</th>
+                                                <th>Gallery</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -157,6 +158,7 @@
                                                 <td>{{rs.project_financial_status.YTD_financial_work_plan}}</td>
                                                 <td>{{rs.project_financial_status.YTD_financial_work_performance}}</td>
                                                 <td>{{rs.project_financial_status.YTD_financial_performance_to_plan_ratio}}</td>
+                                                 <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
 
                                                 
                                             </tr>

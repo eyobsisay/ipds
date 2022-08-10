@@ -86,6 +86,7 @@
                                                 <th>Date of Appraisal Result Sent</th>
                                                 <th>Arrival Date of THe paln For evaluation to PDS</th>
                                                 <th>Evaluation Result</th>
+                                                <th>gallery</th>
                                                 
                                                 
                                             </tr>
@@ -100,6 +101,7 @@
                                                 <td>{{rs.arrival_date_of_project_appraisal_to_pds}}</td>
                                                 <td>{{rs2.arrival_date_of_plane_for_evaluation_pdm}}</td>
                                                 <td>{{rs2.evaluation_result}}</td>
+
                                                 
                                             </tr>
                                             {%endfor%}
@@ -111,10 +113,13 @@
                                         </tbody>
                                       
                                     </table>
+
                                 </div>
                                 <div>
                                     {% include "report/pagination.html" %}
                                      </div>
+                                    <td><a href="{% url 'report:gallery' 1 %}" >asdfsfdfs</a></td>
+
                             </div>
                         </div>
                      

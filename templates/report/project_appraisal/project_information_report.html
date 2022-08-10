@@ -109,6 +109,7 @@
                                                 <th>project owner email</th>
                                                 <th>project owner website</th>
                                                 <th>project owner office place</th>
+                                                <th>gallery</th>
                                                 
                                             </tr>
                                         </thead>
@@ -129,6 +130,7 @@
                                                 <td>{{rs.project_owner.email}}</td>
                                                 <td>{{rs.project_owner.website}}</td>
                                                 <td>{{rs.project_owner.owner_office_place}}</td>
+                                                <td><a href="{% url 'report:gallery' rs.id %}" >see</a></td>
                                           
                                          </tr>
                                       

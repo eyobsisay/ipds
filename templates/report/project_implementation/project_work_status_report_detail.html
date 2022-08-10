@@ -15,7 +15,27 @@
                         <div class="col-xl-12 col-md-12">
                             <div class="card user-card-full">
                                 <div class="row m-l-0 m-r-0">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-2" >
+                                                <a href="{% url 'report:project_financial_status_report_detail' project_work_status_report_detail.id %}" class="btn btn-info btn-skew"  style="margin-left:20px"> 
+                                                    <i class="feather icon-eye"></i> Financial detail</a>
+                                            </div>
+                                            
+                                            <div class="col-sm-2" >
+                                                <a href="{% url 'report:project_evaluation_information_detail' project_work_status_report_detail.id %}" class="btn btn-info btn-skew"  style="margin-left:20px"> <i class="feather icon-eye"></i> Evaluation  status</a>
+                                            </div>
+                                  
+                                            <div class="col-sm-2" >
+                                                <a href="{% url 'report:project_remark_report_detail' project_work_status_report_detail.id %}" class="btn btn-info btn-skew"  style="margin-left:20px"> <i class="feather icon-eye"></i> Work Status</a>
+                                            </div>
+                                            <div class="col-sm-2" >
+                                                <a href="{% url 'report:gallery_implementation' project_work_status_report_detail.id %}" class="btn btn-info btn-skew"  style="margin-left:20px"> <i class="feather icon-eye"></i> Gallery </a>
+                                            </div>
                                    
+                               
+                                         </div>
+                                        </div>
                                     <div class="col-sm-6">
                                         <div class="card-block">
                                             <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Project </h6>
@@ -102,17 +122,34 @@
                                                     </div>
             
                                                 </div>
-                                                  
-                                              
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">performance to plane Ratio</p>
-                                                    <h6 class="text-muted f-w-400">{{project_work_status_report_detail.project_work_status.project_performance_to_plan_ratio}}</h6>
-                                                </div>
+                                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">quarter physical performance to plan Ratio</h6>
                                                 
-                                              
-                                               
-                                            </div>
+                                                <div class="card-block">
+                                
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">First</p>
+                                                            <h6 class="text-muted f-w-400">{{project_work_status_report_detail.project_work_status.project_performance_to_plan_ratio.first_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">Second</p>
+                                                            <h6 class="text-muted f-w-400">{{project_work_status_report_detail.project_work_status.project_performance_to_plan_ratio.second_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Thired</p>
+                                                            <h6 class="text-muted f-w-400">{{project_work_status_report_detail.project_work_status.project_performance_to_plan_ratio.third_quarter}}</h6>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <p class="m-b-10 f-w-600">  Fourth</p>
+                                                            <h6 class="text-muted f-w-400">{{project_work_status_report_detail.project_work_status.project_performance_to_plan_ratio.fourth_quarter}}</h6>
+                                                        </div>
+                                                        
+                                                    </div>
+            
+                                                </div>
+                                                  
+                                        
                                             <h6 class="m-b-20 p-b-5 b-b-default f-w-600">YTD</h6>
                                             <div class="row">
                                                 <div class="col-sm-6">
