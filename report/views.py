@@ -814,12 +814,14 @@ def sample():
     } 
     return context
 def main_dashboard(request):
+    last_project_appraisal=ProjectAppraisal.objects.all().order_by('-id')[:5]
+    last_project_implementation=ProjectImplementations.objects.all().order_by('-id')[:5]
     sample_data=sample()
     chartObj = FusionCharts( 'scrollcombidy2d', 'ex1', '600', '400', 'chart-8', 'json', """{
   "chart": {
-    "caption": "Analysing Subsidies by Youth Population",
+    "caption": "Analysing graph investment over completion rate",
     "subcaption": "By province",
-    "yaxisname": "Population Count",
+    "yaxisname": "Investement ",
     "syaxisname": "Subsidies % of Income",
     "labeldisplay": "rotate",
     "snumbersuffix": "%",
@@ -832,127 +834,46 @@ def main_dashboard(request):
     {
       "category": [
         {
-          "label": "Matzikama"
+          "label": "Addis abeba"
         },
         {
-          "label": "Cederberg"
+          "label": "Oromiya"
         },
         {
-          "label": "Bergrivier"
+          "label": "Amahara"
         },
         {
-          "label": "Saldanha Bay"
+          "label": "Tigeray"
         },
         {
-          "label": "Swartland"
+          "label": "North"
         },
         {
-          "label": "Witzenberg"
+          "label": "adama"
         },
         {
-          "label": "Drakenstein"
+          "label": "mekele"
         },
         {
-          "label": "Stellenbosch"
+          "label": "bale"
         },
         {
-          "label": "Breede Valley"
+          "label": "Mizan"
         },
         {
-          "label": "Langeberg"
+          "label": "jima"
         },
-        {
-          "label": "Swellendam"
-        },
-        {
-          "label": "Theewaterskloof"
-        },
-        {
-          "label": "Overstrand"
-        },
-        {
-          "label": "Cape Agulhas"
-        },
-        {
-          "label": "Kannaland"
-        },
-        {
-          "label": "Hessequa"
-        },
-        {
-          "label": "Mossel Bay"
-        },
-        {
-          "label": "George"
-        },
-        {
-          "label": "Oudtshoorn"
-        },
-        {
-          "label": "Bitou"
-        },
-        {
-          "label": "Knysna"
-        },
-        {
-          "label": "Laingsburg"
-        },
-        {
-          "label": "Prince Albert"
-        },
-        {
-          "label": "Beaufort West"
-        }
+       
       ]
     }
   ],
   "dataset": [
     {
-      "seriesname": "Total Population",
-      "plottooltext": "Population: $dataValue",
+      "seriesname": "Total Investemet",
+      "plottooltext": "Investments $dataValue",
       "data": [
-        {
-          "value": "71045"
-        },
-        {
-          "value": "52949"
-        },
-        {
-          "value": "67474"
-        },
-        {
-          "value": "111173"
-        },
-        {
-          "value": "133762"
-        },
-        {
-          "value": "130548"
-        },
-        {
-          "value": "280195"
-        },
-        {
-          "value": "173419"
-        },
-        {
-          "value": "176578"
-        },
-        {
-          "value": "105483"
-        },
-        {
-          "value": "40211"
-        },
-        {
-          "value": "117109"
-        },
-        {
-          "value": "93466"
-        },
-        {
-          "value": "36000"
-        },
+       
+       
         {
           "value": "24168"
         },
@@ -986,90 +907,48 @@ def main_dashboard(request):
       ]
     },
     {
-      "seriesname": "Youth",
+      "seriesname": "Number of project",
       "renderas": "area",
       "showanchors": "0",
-      "plottooltext": "Youth: $dataValue",
+      "plottooltext": "project count: $dataValue",
       "data": [
         {
-          "value": "24598"
+          "value": "22"
         },
         {
-          "value": "18302"
+          "value": "3"
         },
         {
-          "value": "22162"
+          "value": "4"
         },
         {
-          "value": "40696"
+          "value": "5"
         },
         {
-          "value": "47420"
+          "value": "9"
         },
         {
-          "value": "49981"
+          "value": "3"
         },
         {
-          "value": "97230"
+          "value": "8"
         },
         {
-          "value": "73162"
+          "value": "3"
         },
         {
-          "value": "60668"
+          "value": "2"
         },
         {
-          "value": "34594"
-        },
-        {
-          "value": "12567"
-        },
-        {
-          "value": "39907"
-        },
-        {
-          "value": "30681"
-        },
-        {
-          "value": "11323"
-        },
-        {
-          "value": "7801"
-        },
-        {
-          "value": "15785"
-        },
-        {
-          "value": "31478"
-        },
-        {
-          "value": "72762"
-        },
-        {
-          "value": "32301"
-        },
-        {
-          "value": "21401"
-        },
-        {
-          "value": "27863"
-        },
-        {
-          "value": "3254"
-        },
-        {
-          "value": "5562"
-        },
-        {
-          "value": "19047"
+          "value": "1"
         }
       ]
     },
     {
-      "seriesname": "Subsidies received %",
+      "seriesname": "project completion rate %",
       "parentyaxis": "S",
       "renderas": "line",
-      "plottooltext": "$dataValue subsidies received",
+      "plottooltext": "$dataValue completion rate",
       "showvalues": "0",
       "data": [
         {
@@ -1148,7 +1027,47 @@ def main_dashboard(request):
     }
   ]
 }""")
-    context={'output8':chartObj.render()}
+    chartObj2 = FusionCharts( 'angulargauge', 'ex1', '600', '400', 'chart-9', 'json', """{
+  "chart": {
+    "caption": "Response Rate",
+    "lowerlimit": "0",
+    "upperlimit": "100",
+    "showvalue": "1",
+    "numbersuffix": "%",
+    "theme": "fusion",
+    "showtooltip": "0"
+  },
+  "colorrange": {
+    "color": [
+      {
+        "minvalue": "0",
+        "maxvalue": "50",
+        "code": "#F2726F"
+      },
+      {
+        "minvalue": "50",
+        "maxvalue": "75",
+        "code": "#FFC533"
+      },
+      {
+        "minvalue": "75",
+        "maxvalue": "100",
+        "code": "#62B58F"
+      }
+    ]
+  },
+  "dials": {
+    "dial": [
+      {
+        "value": "81"
+      }
+    ]
+  }
+}""")
+    context={'output8':chartObj.render(),
+    'output9': chartObj2.render(),
+    'last_project_appraisal':last_project_appraisal,
+    'last_project_implementation':last_project_implementation}
     context.update(sample_data)
 
     return render(request, 'main_dashboard.html', context)

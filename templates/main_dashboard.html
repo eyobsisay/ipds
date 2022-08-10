@@ -114,12 +114,57 @@
                     </div>
                 </div>
             </div>
-        </div>   
+   
             <!-- task, page, download counter  end -->
-        <div class="col-12" style="color:red;"> 
+        <div class="col-12" > 
             <div class="row">
-                <div class="col-sm-4 " style="margin-bottom: 19px;
-                ">
+                <div class="col-sm-4 card-block" style="margin-bottom: 19px;    background-color: white; ">
+                    <div class="table-responsive dt-responsive" style=" background-color: white; "  >
+                        Last Apperisal
+                        <table id="complex-header2" class="table table-striped table-bordered nowrap">
+                            <thead>
+                                <tr>
+                                    <th rowspan="0">Project Name</th>
+                                    <th> Date</th>
+                                </tr>
+                            
+                            </thead>
+                            <tbody>
+                                {% for rs in last_project_appraisal %}
+                                <tr>
+                                    <td><a href="{% url 'report:project_information_report_detail' rs.id  %}" >{{rs.project_name}}</a></td>
+                                    <td>{{rs.created_date}}</td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+            
+                    </div>
+                </div>
+                <div class="col-sm-4 card-block"style="margin-bottom: 19px; background-color: white; "  >
+                    <div class="table-responsive dt-responsive" style=" background-color: white; " >
+                        Last Project Implementation
+                        <table id="complex-header2" class="table table-striped table-bordered nowrap">
+                            <thead>
+                                <tr>
+                                    <th rowspan="0">Project Name</th>
+                                    <th> Date</th>
+                                </tr>
+                            
+                            </thead>
+                            <tbody>
+                                {% for rs in last_project_implementation %}
+                                <tr>
+                                    <td><a href="{% url 'report:project_information_report_detail' rs.id  %}" >{{rs.project.project_name}}</a></td>
+                                    <td>{{rs.project.created_date}}</td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+            
+                    </div>
+                </div>
+                <div class="col-sm-4 " style="margin-bottom: 19px; ">
                       <div class="col-sm-3">
                           {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
                        
@@ -178,14 +223,21 @@
              
                   </div>
                  </div>
-                 <div class="col-sm-4" style="margin-bottom: 19px;
-                 ">
+                 <div class="col-sm-4" style="margin-bottom: 19px;">
                       <div class="col-sm-3">
                           {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
                             <div id="chart-7">{{ output7|safe }}</div>
               
                    </div>
                   </div>
+                  <div class="col-sm-4 " style="margin-bottom: 19px;
+                  ">
+                        <div class="col-sm-3">
+                            {% comment %} <p class="m-b-10 f-w-600">Project Name</p> {% endcomment %}
+                         
+                            <div id="chart-9">{{ output9|safe }}</div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
